@@ -1,11 +1,13 @@
 ﻿using System;
 
-public class CeilingCoil()
+namespace MohawkGame2D
 {
-
-    public void Update()
+    public class CeilingCoil()
     {
 
+        public void Update()
+        {
+
+        }
     }
-}
 }

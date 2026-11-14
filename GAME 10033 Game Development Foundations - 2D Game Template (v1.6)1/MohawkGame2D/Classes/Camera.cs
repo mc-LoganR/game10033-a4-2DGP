@@ -1,11 +1,14 @@
 ﻿using System;
 
-public class Camera
+namespace MohawkGame2D
 {
-    // Variables
-
-    public void Update()
+    public class Camera
     {
+        // Variables
 
+        public void Update()
+        {
+
+        }
     }
 }

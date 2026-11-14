@@ -1,9 +1,12 @@
 ﻿using System;
 
-public class Hologram
+namespace MohawkGame2D
 {
-    public void Update()
+    public class Hologram
     {
+        public void Update()
+        {
 
+        }
     }
 }

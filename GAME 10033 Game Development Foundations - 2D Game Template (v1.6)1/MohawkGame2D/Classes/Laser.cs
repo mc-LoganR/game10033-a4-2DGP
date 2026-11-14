@@ -1,9 +1,12 @@
 ﻿using System;
 
-public class Laser()
+namespace MohawkGame2D
 {
-    public void Update()
+    public class Laser()
     {
+        public void Update()
+        {
 
+        }
     }
 }

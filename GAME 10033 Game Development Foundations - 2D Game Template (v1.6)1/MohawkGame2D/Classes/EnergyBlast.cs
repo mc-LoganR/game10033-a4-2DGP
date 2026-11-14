@@ -1,9 +1,12 @@
 ﻿using System;
 
-public class EnergyBlast
+namespace MohawkGame2D
 {
-    public void Update()
+    public class EnergyBlast
     {
+        public void Update()
+        {
 
+        }
     }
 }

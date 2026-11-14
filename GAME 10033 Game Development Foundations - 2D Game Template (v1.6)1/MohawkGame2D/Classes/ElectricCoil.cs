@@ -1,9 +1,12 @@
 ﻿using System;
 
-public class ElectricCoil()
+namespace MohawkGame2D
 {
-    public void Update()
+    public class ElectricCoil()
     {
+        public void Update()
+        {
 
+        }
     }
 }
