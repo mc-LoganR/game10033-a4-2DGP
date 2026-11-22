@@ -4,18 +4,22 @@ namespace MohawkGame2D
 {
     public class Spike()
     {
+        // Color variables
+        public Color SpikeColor = Color.Black;
+
         // Position variables
-        public float triX1;
-        public float triX2;
-        public float triX3;
-        public float triY1;
-        public float triY2;
+        public float TriX1;
+        public float TriX2;
+        public float TriX3;
+        public float TriY1;
+        public float TriY2;
 
         public void Update()
         {
-            Draw.SetLineColor(Color.Black);
-            Draw.SetFillColor(Color.DarkGray);
-            Draw.Triangle(triX1, triY1, triX2, triY2, triX3, triY1);
+            // Spike
+            Draw.SetLineColor(Color.DarkGray);
+            Draw.SetFillColor(SpikeColor);
+            Draw.Triangle(TriX1, TriY1, TriX2, TriY2, TriX3, TriY1);
         }
     }
 }
