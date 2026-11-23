@@ -1,37 +1,33 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace MohawkGame2D
 {
-    public class Laser()
+    public class Laser: Obstacle
     {
-
         // Base variables
-        public float BaseX;
-        public float BaseY;
-        public float BaseW;
-        public float BaseH;
+        public float BaseW = 100;
+        public float BaseH = 20;
 
         // Laser variables
-        public float LaserX;
-        public float LaserY;
-        public float LaserW;
-        public float LaserH;
+        public float LaserW = 60;
+        public float LaserH = 475;
 
         // Colors
-        public Color BaseColor;
+        public Color BaseColor = Color.DarkGray;
         public Color LaserColor = new(204, 51, 51);
 
-        public void Update()
+        public override void Update()
         {
-            // Base
-            Draw.SetFillColor(BaseColor);
-            Draw.Rectangle(BaseX, BaseY, BaseW, BaseH);
+            base.Update(); // Update parent
 
-            // Laser
-            Draw.SetFillColor(LaserColor);
-            Draw.Rectangle(LaserX, LaserY, LaserW, LaserH);
-
+            if (Active == true)
+            {
+                // Draw laser
+                Draw.SetFillColor(BaseColor); // Color
+                Draw.Rectangle(X, Y, BaseW, BaseH); // Draw base
+                Draw.SetFillColor(LaserColor); // Color
+                Draw.Rectangle(X + (BaseW - LaserW) / 2, Y - LaserH, LaserW, LaserH); // Draw laser
+            }
         }
     }
 }

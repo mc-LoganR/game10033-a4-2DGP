@@ -2,27 +2,33 @@
 
 namespace MohawkGame2D
 {
-    public class CeilingCoil()
+    public class CeilingCoil : Obstacle
     {
         // Coil variables
-        public float TeslaX;
-        public float TeslaY;
-        public float TeslaW;
-        public float TeslaH;
+        public float TeslaW = 100;
+        public float TeslaH = 20;
 
         // Generator variables
-        public float SphereX;
-        public float SphereY;
-        public float SphereRadius;
+        public float SphereRadius = 20;
 
-        public void Update()
+        // Colors
+        public Color TeslaColor;
+        public Color SphereColor;
+
+        public override void Update()
         {
-            // Base
-            Draw.Rectangle(TeslaX, TeslaY, TeslaW, TeslaH);
+            base.Update();
 
-            // Electric generator
-            Draw.Circle(SphereX, SphereY, SphereRadius);
+            if (Active == true)
+            {
+                // Ceiling-mounted base
+                Draw.SetFillColor(TeslaColor);
+                Draw.Rectangle(X, Y, TeslaW, TeslaH);
 
+                // Hanging generator
+                Draw.SetFillColor(SphereColor);
+                Draw.Circle(X + TeslaW / 2, Y + TeslaH + SphereRadius, SphereRadius);
+            }
         }
     }
 }

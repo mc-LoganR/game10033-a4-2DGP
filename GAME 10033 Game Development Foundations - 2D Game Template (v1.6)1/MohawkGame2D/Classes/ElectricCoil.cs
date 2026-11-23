@@ -2,29 +2,34 @@
 
 namespace MohawkGame2D
 {
-    public class ElectricCoil()
+    public class ElectricCoil : Obstacle
     {
-        // Coil Variables
-        // Base
-        public float TeslaX;
-        public float TeslaY;
-        public float TeslaW;
-        public float TeslaH;
+        // Base dimensions
+        public float TeslaW = 100;
+        public float TeslaH = 20;
 
-        // Generator variables
-        public float SphereX;
-        public float SphereY;
-        public float SphereRadius;
+        // Generator dimensions
+        public float SphereRadius = 20;
 
-        public void Update()
+        // Colors
+        public Color TeslaColor;
+        public Color SphereColor;
+
+        public override void Update()
         {
-            // Base
-            Draw.Rectangle(TeslaX, TeslaY, TeslaW, TeslaH);
+            // Update parent movement
+            base.Update();
 
-            // Electric generator
-            Draw.Circle(SphereX, SphereY, SphereRadius);
+            if (Active == true)
+            {
+                // Base
+                Draw.SetFillColor(TeslaColor);
+                Draw.Rectangle(X, Y, TeslaW, TeslaH);
 
-
+                // Electric generator
+                Draw.SetFillColor(SphereColor);
+                Draw.Circle(X + TeslaW / 2, Y - SphereRadius, SphereRadius);
+            }
         }
     }
 }
